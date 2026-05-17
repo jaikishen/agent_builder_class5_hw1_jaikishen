@@ -1,0 +1,32 @@
+HW 1 TASKS
+-----------
+TASK 1
+
+After adding the third tool I asked a comparison question - "Which is taller, Falcon 9 or Starship? Compare their heights." and noticed the agent did use the third tool.
+
+--- step 1: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Falcon 9'}
+  observation: {"first_flight": "2010-06-04", "height_m": 70, "diameter_m": 3.7, "mass_kg": 549054, "thrust_kn": 7607, "payload_to_leo_kg": 22800, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Workhorse rocket. First s...
+
+--- step 1: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Starship'}
+  observation: {"first_flight": "2021-03-03", "height_m": 120, "diameter_m": 9, "mass_kg": 5000000, "thrust_kn": 74000, "payload_to_leo_kg": 250000, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Fully reusable super-he...
+
+--- step 2: action ---
+  tool: compare
+  args: {'a': 70, 'b': 120, 'label': 'height_m'}
+  observation: height_m: a=70.0, b=120.0
+
+--- step 3: final answer ---
+Starship is taller than Falcon 9, with a height of 120 meters compared to Falcon 9's 70 meters.
+
+TASK 2
+------
+
+
+
+
+
+
