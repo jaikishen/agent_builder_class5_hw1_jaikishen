@@ -85,4 +85,70 @@ Modified vehicles specification json document and added a new key crew_capacity.
 --- step 3: final answer ---
 The SpaceX rocket that can carry the most crew is the Starship, which is designed to accommodate up to 100 people. It is a fully reusable super-heavy rocket intended for missions to Mars and beyond.
 
+TASK 4
+------
+# Increased temperature of model to 0.7. Ran the same question thrice to observe. Observed that tools were called in same order. Traces were almost the same except final answer was a bit more wordy.
+
+========== run 1 (temperature=0.7) ==========
+USER: Which is taller, Falcon 9 or Starship? Compare their heights.
+
+--- step 1: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Falcon 9'}
+  observation: {"first_flight": "2010-06-04", "height_m": 70, "diameter_m": 3.7, "mass_kg": 549054, "thrust_kn": 7607, "payload_to_leo_kg": 22800, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Workhorse rocket. First s...
+
+--- step 1: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Starship'}
+  observation: {"first_flight": "2021-03-03", "height_m": 120, "diameter_m": 9, "mass_kg": 5000000, "thrust_kn": 74000, "payload_to_leo_kg": 250000, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Fully reusable super-he...
+
+--- step 2: action ---
+  tool: compare
+  args: {'a': 70, 'b': 120, 'label': 'height_m'}
+  observation: height_m: a=70.0, b=120.0
+
+--- step 3: final answer ---
+Starship, at 120 meters tall, is significantly taller than Falcon 9, which stands at 70 meters.
+
+========== run 2 (temperature=0.7) ==========
+USER: Which is taller, Falcon 9 or Starship? Compare their heights.
+
+--- step 1: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Falcon 9'}
+  observation: {"first_flight": "2010-06-04", "height_m": 70, "diameter_m": 3.7, "mass_kg": 549054, "thrust_kn": 7607, "payload_to_leo_kg": 22800, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Workhorse rocket. First s...
+
+--- step 1: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Starship'}
+  observation: {"first_flight": "2021-03-03", "height_m": 120, "diameter_m": 9, "mass_kg": 5000000, "thrust_kn": 74000, "payload_to_leo_kg": 250000, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Fully reusable super-he...
+
+--- step 2: action ---
+  tool: compare
+  args: {'a': 70, 'b': 120, 'label': 'height_m'}
+  observation: height_m: a=70.0, b=120.0
+
+--- step 3: final answer ---
+Starship is taller than Falcon 9, measuring 120 meters compared to Falcon 9's height of 70 meters.
+
+========== run 3 (temperature=0.7) ==========
+USER: Which is taller, Falcon 9 or Starship? Compare their heights.
+
+--- step 1: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Falcon 9'}
+  observation: {"first_flight": "2010-06-04", "height_m": 70, "diameter_m": 3.7, "mass_kg": 549054, "thrust_kn": 7607, "payload_to_leo_kg": 22800, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Workhorse rocket. First s...
+
+--- step 1: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Starship'}
+  observation: {"first_flight": "2021-03-03", "height_m": 120, "diameter_m": 9, "mass_kg": 5000000, "thrust_kn": 74000, "payload_to_leo_kg": 250000, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Fully reusable super-he...
+
+--- step 2: action ---
+  tool: compare
+  args: {'a': 70, 'b': 120, 'label': 'height_m'}
+  observation: height_m: a=70.0, b=120.0
+
+--- step 3: final answer ---
+Starship is taller than Falcon 9, with a height of 120 meters compared to Falcon 9's height of 70 meters.
 
