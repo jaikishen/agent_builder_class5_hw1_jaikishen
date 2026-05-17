@@ -58,6 +58,31 @@ The Starship has a higher thrust of 74,000 kN compared to the Falcon Heavy's 22,
 
 
 
+TASK 3
+------
+Modified vehicles specification json document and added a new key crew_capacity. Asked the agent "Which of our rockets can carry the most crew, and how many people?" which requires the key. The agent pulled it out correctly.
 
+--- step 1: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Crew Dragon'}
+  observation: UNKNOWN VEHICLE: 'Crew Dragon'. Allowed: ['Falcon 1', 'Falcon 9', 'Falcon Heavy', 'Starship']
+
+--- step 2: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Falcon 9'}
+  observation: {"first_flight": "2010-06-04", "height_m": 70, "diameter_m": 3.7, "mass_kg": 549054, "thrust_kn": 7607, "payload_to_leo_kg": 22800, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Workhorse rocket. First s...
+
+--- step 2: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Falcon Heavy'}
+  observation: {"first_flight": "2018-02-06", "height_m": 70, "diameter_m": 12.2, "mass_kg": 1420788, "thrust_kn": 22819, "payload_to_leo_kg": 63800, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Heavy-lift variant wit...
+
+--- step 2: action ---
+  tool: vehicle_specs
+  args: {'vehicle': 'Starship'}
+  observation: {"first_flight": "2021-03-03", "height_m": 120, "diameter_m": 9, "mass_kg": 5000000, "thrust_kn": 74000, "payload_to_leo_kg": 250000, "stages": 2, "reusable": true, "active": true, "manufacturer": "SpaceX", "notes": "Fully reusable super-he...
+
+--- step 3: final answer ---
+The SpaceX rocket that can carry the most crew is the Starship, which is designed to accommodate up to 100 people. It is a fully reusable super-heavy rocket intended for missions to Mars and beyond.
 
 
