@@ -12,3 +12,6 @@ wheels/
 .ipynb_checkpoints/
 __pycache__/
 .claude/
+
+# Local planning notes
+tasks.md
